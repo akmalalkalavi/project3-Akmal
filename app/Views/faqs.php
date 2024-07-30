@@ -11,7 +11,7 @@ scale=1.0">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light shadow-sm p-2 mb-5 bg-body rounded">
         <div class="container">
             <a class="navbar-brand" href="<?= base_url() ?>">MyBlog</a>
             <button class="navbar-toggler" type="button" data-bs- toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria- expanded="false" aria-label="Toggle navigation">
@@ -51,11 +51,13 @@ scale=1.0">
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-12 my-2 card">
+            <div class="col-md-12 my-2 card shadow-sm p-2 mb-3 bg-body rounded">
                 <div class="card-body">
                     <h5 class="h5">Pertanyaan? (Q)</h5>
-                    <p>(A) Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. p>
+                    <details open>
+                        <summary><strong>Apakah saya bisa menghubungi admin?</strong></summary>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </details>
                 </div>
             </div>
         </div>

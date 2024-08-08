@@ -8,6 +8,7 @@ scale=1.0">
     <title>FAQ</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>" />
 </head>
 
 <body>
@@ -42,7 +43,7 @@ scale=1.0">
             </div>
         </div>
     </nav>
-    <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="p-5 mb-4 bg-light rounded-3 welcome-section">
         <div class="container py-5">
             <h1 class="display-5 fw-bold">FAQ</h1>
             <!-- <p class="col-md-8 fs-4">di laman portal berita</p> -->

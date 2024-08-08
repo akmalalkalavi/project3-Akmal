@@ -31,17 +31,31 @@ class PostAdmin extends BaseController
     {
         // Lakukan Validasi
         $validation = \Config\Services::validation();
-        $validation->setRules(['title' => 'required']);
+        $validation->setRules([
+            'title' => 'required',
+            'content' => 'required',
+            'image' => 'uploaded[image]|mime_in[image,image/png,image/jpg,image/jpeg]|max_size[image,2048]'
+        ]);
         $isDataValid = $validation->withRequest($this->request)->run();
 
         // Jika data valid, simpan ke database 
         if ($isDataValid) {
+            // Handle image upload
+            $image = $this->request->getFile('image');
+           
+            if ($image->isValid() && !$image->hasMoved()) {
+                $newName = $image->getRandomName();
+                $image->move(ROOTPATH. 'assets', $newName);
+                $imagePath = 'assets' . $newName;
+            }
+
             $post = new PostModel();
             $post->insert([
                 "title" => $this->request->getPost('title'),
                 "content" => $this->request->getPost('content'),
                 "status" => $this->request->getPost('status'),
-                "slug" => url_title($this->request->getPost('title'), '-', TRUE)
+                "slug" => url_title($this->request->getPost('title'), '-', TRUE),
+                "image" => $imagePath
             ]);
             return redirect('admin/post');
         }
@@ -60,15 +74,29 @@ class PostAdmin extends BaseController
         $validation = \Config\Services::validation();
         $validation->setRules([
             'id' => 'required',
-            'title' => 'required'
+            'title' => 'required',
+            'content' => 'required',
+            'image' => 'uploaded[image]|mime_in[image,image/png,image/jpg,image/jpeg]|max_size[image,2048]'
         ]);
         $isDataValid = $validation->withRequest($this->request)->run();
+        
         // jika data valid, maka simpan ke database
         if ($isDataValid) {
+             // Handle image upload
+            $image = $this->request->getFile('image');
+           
+            if ($image->isValid() && !$image->hasMoved()) {
+                $newName = $image->getRandomName();
+                $image->move('assets', $newName);
+                $imagePath = '' . $newName;
+            } else {
+                $imagePath = $data['post']['image'];
+            }
             $post->update($id, [
                 "title" => $this->request->getPost('title'),
                 "content" => $this->request->getPost('content'),
                 "status" => $this->request->getPost('status'),
+                "image" => $imagePath
             ]);
             return redirect('admin/post');
         }
@@ -83,4 +111,5 @@ class PostAdmin extends BaseController
         $post->delete($id);
         return redirect('admin/post');
     }
+
 }

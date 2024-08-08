@@ -25,10 +25,7 @@
                         <a href="<?= base_url('admin/post/new') ?>" class="btn btn-primary mr-3">New Post</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('admin/setting') ?>">Setting</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('auth/logout') ?>">Logout</a>
+                        <a class="nav-link" href="<?= base_url('logout') ?>">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -44,6 +41,7 @@
             <thead>
                 <tr>
                     <th>#</th>
+                    <th>Gambar</th>
                     <th>Title</th>
                     <th>Status</th>
                     <th>Action</th>
@@ -53,6 +51,7 @@
                 <?php foreach ($posts as $post) : ?>
                     <tr>
                         <td><?= $post['id'] ?></td>
+                        <td><img src="<?=base_url('assets/' . $post['image']); ?>" style="width:100px;" ></td>
                         <td>
                             <strong><?= $post['title'] ?></strong><br>
                             <small class="text-muted"><?= $post['created_at'] ?></small>

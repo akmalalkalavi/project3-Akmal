@@ -26,7 +26,7 @@ dan isi datanya dengan post yang sudah terbit
         $post = new PostModel();
         $data['post'] = $post->where([
                 'slug' => $slug,
-                'status' => 'published'
+                'status' => 'published',
         ])->first();
         // tampilkan 404 error jika data tidak ditemukan
             if (!$data['post']) {

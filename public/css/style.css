@@ -1,0 +1,5 @@
+.welcome-section {
+    background: url('/assets/background.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+}

@@ -10,5 +10,5 @@ class PostModel extends Model
     protected $primaryKey       = 'id';
     
     protected $protectFields    = true;
-    protected $allowedFields    = ['title', 'content', 'status', 'author', 'slug'];
+    protected $allowedFields    = ['title', 'content', 'status', 'author', 'slug', 'image'];
 }

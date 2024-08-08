@@ -8,6 +8,7 @@ scale=1.0">
     <title>MyBlog</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>" />
 </head>
 
 <body>
@@ -23,26 +24,22 @@ scale=1.0">
                         <a class="nav-link active" aria-current="page" href="<?= base_url() ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?=
-                                                    base_url('about') ?>">About</a>
+                        <a class="nav-link" href="<?= base_url('about') ?>">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('post')
-                                                    ?>">Blog</a>
+                        <a class="nav-link" href="<?= base_url('post') ?>">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?=
-                                                    base_url('contact') ?>">Contact</a>
+                        <a class="nav-link" href="<?= base_url('contact') ?>">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('faqs')
-                                                    ?>">FAQ</a>
+                        <a class="nav-link" href="<?= base_url('faqs') ?>">FAQ</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="p-5 mb-4 bg-light rounded-3 welcome-section">
         <div class="container py-5">
             <h1 class="display-5 fw-bold">Selamat Datang</h1>
             <!-- <p class="col-md-8 fs-4">di laman portal berita</p> -->
@@ -51,33 +48,15 @@ scale=1.0">
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-12 my-2 card shadow-sm p-2 mb-3 bg-body rounded">
-                <div class="card-body">
-                    <h5 class="h5">Mulai ngoding PHP nich</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni.
-                        Commodi iusto ad harum voluptas exercitationem facere eos earum laboriosam excepturi
-                        quas?</p>
+            <?php foreach ($posts as $post) : ?>
+                <div class="col-md-12 my-2 card shadow-sm p-2 mb-3 bg-body rounded">
+                    <div class="card-body">
+                        <img src="/assets/<?= $post['image'] ?>" style="width: 50%;">
+                        <h5 class="card-title"><a href="/post/<?= $post['slug'] ?>"><?= $post['title'] ?></a></h5>
+                        <p><?= substr($post['content'], 0, 120) ?></p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-12 my-2 card shadow-sm p-2 mb-3 bg-body rounded">
-                <div class="card-body">
-                    <h5 class="h5">Jadi paham CSS dan JS</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni.
-                        Commodi iusto ad harum voluptas exercitationem facere eos earum laboriosam excepturi
-                        quas?</p>
-                </div>
-            </div>
-            <div class="col-md-12 my-2 card shadow-sm p-2 mb-3 bg-body rounded">
-                <div class="card-body">
-                    <h5 class="h5">Codeigniter asyik juga kok</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni.
-                        Commodi iusto ad harum voluptas exercitationem facere eos earum laboriosam excepturi
-                        quas?</p>
-                </div>
-            </div>
+            <?php endforeach ?>
         </div>
     </div>
     <div class="container py-4">

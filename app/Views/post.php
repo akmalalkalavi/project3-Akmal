@@ -8,6 +8,7 @@ scale=1.0">
     <title>Blog</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>" />
 </head>
 
 <body>
@@ -28,7 +29,7 @@ scale=1.0">
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="<?= base_url('post')
-                                                    ?>">Blog</a>
+                                                            ?>">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?=
@@ -42,7 +43,7 @@ scale=1.0">
             </div>
         </div>
     </nav>
-    <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="p-5 mb-4 bg-light rounded-3 welcome-section">
         <div class="container py-5">
             <h1 class="display-5 fw-bold">Blogs</h1>
             <!-- <p class="col-md-8 fs-4">di laman portal berita</p> -->
@@ -54,13 +55,9 @@ scale=1.0">
             <?php foreach ($posts as $post) : ?>
                 <div class="col-md-12 my-2 card shadow-sm p-2 mb-3 bg-body rounded">
                     <div class="card-body">
-                        <h5 class="h5"><a href="/post/<?=
-                                                        $post['slug'] ?>"><?= $post['title'] ?></a></h5>
-                        <p><?= substr(
-                                $post['content'],
-                                0,
-                                120
-                            ) ?></p>
+                        <img src="/assets/<?= $post['image'] ?>" style="width: 50%;">
+                        <h5 class="card-title"><a href="/post/<?= $post['slug'] ?>"><?= $post['title'] ?></a></h5>
+                        <p><?= substr($post['content'], 0, 120) ?></p>
                     </div>
                 </div>
             <?php endforeach ?>

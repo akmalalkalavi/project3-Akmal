@@ -8,6 +8,7 @@ scale=1.0">
     <title>Blog Detail</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>" />
 </head>
 
 <body>
@@ -42,7 +43,7 @@ scale=1.0">
             </div>
         </div>
     </nav>
-    <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="p-5 mb-4 bg-light rounded-3 welcome-section">
         <div class="container py-5">
             <h1 class="display-5 fw-bold">Blog Detail</h1>
             <!-- <p class="col-md-8 fs-4">di laman portal berita</p> -->
@@ -51,11 +52,11 @@ scale=1.0">
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-12 my-2 card shadow-sm p-2 mb-3 bg-body rounded ">
+            <div class="col-md-12 my-2 card shadow-sm p-2 mb-3 bg-body rounded">
                 <div class="card-body">
+                    <img src="/assets/<?= $post['image']?>" style="width: 50%;">
                     <h5 class="h5"><?= $post['title'] ?></h5>
-                    <span><?= $post['author'] ?> | <?=
-                                                    $post['created_at'] ?></span>
+                    <span><?= $post['author'] ?> | <?= $post['created_at'] ?></span>
                     <p><?= $post['content'] ?></p>
                 </div>
             </div>

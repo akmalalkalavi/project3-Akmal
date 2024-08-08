@@ -7,6 +7,7 @@
     <title>MyBlog</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>" />
 </head>
 
 <body>
@@ -37,13 +38,17 @@ navigation">
             </div>
         </div>
     </nav>
-    <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="p-5 mb-4 bg-light rounded-3 weclome">
         <div class="container py-5">
             <h1 class="display-5 fw-bold">Post > New</h1>
         </div>
     </div>
     <div class="container">
-        <form action="" method="post" id="text-editor">
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="form-group mb-2">
+                <label for="image">Image</label>
+                <input class="form-control" type="file" id="image" name="image">
+            </div>
             <div class="form-group mb-2">
                 <label for="title">Title</label>
                 <input type="text" name="title" class="form-control" placeholder="Posttitle" required>

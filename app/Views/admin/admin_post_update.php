@@ -43,8 +43,12 @@ navigation">
         </div>
     </div>
     <div class="container">
-        <form action="" method="post" id="text-editor">
+        <form action="" method="post" id="postForm" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?= $post['id'] ?>" />
+            <div class="form-group mb-2">
+                <label for="image">Image</label>
+                <input class="form-control" type="file" id="image" name="image">
+            </div>
             <div class="form-group mb-2">
                 <label for="title">Title</label>
                 <input type="text" name="title" class="form-control" placeholder="Post title" value="<?= $post['title'] ?>" required>

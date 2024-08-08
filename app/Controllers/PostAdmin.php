@@ -45,8 +45,8 @@ class PostAdmin extends BaseController
            
             if ($image->isValid() && !$image->hasMoved()) {
                 $newName = $image->getRandomName();
-                $image->move(ROOTPATH. 'assets', $newName);
-                $imagePath = 'assets' . $newName;
+                $image->move('assets', $newName);
+                $imagePath = '' . $newName;
             }
 
             $post = new PostModel();

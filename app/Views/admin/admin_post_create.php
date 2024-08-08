@@ -29,16 +29,13 @@ navigation">
                         <a href="<?= base_url('admin/post/new') ?>" class="btn btn-primary mr-3">New Post</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('admin/setting') ?>">Setting</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('auth/logout') ?>">Logout</a>
+                        <a class="nav-link" href="<?= base_url('logout') ?>">Logout</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="p-5 mb-4 bg-light rounded-3 weclome">
+    <div class="p-5 mb-4 bg-light rounded-3 welcome-section">
         <div class="container py-5">
             <h1 class="display-5 fw-bold">Post > New</h1>
         </div>

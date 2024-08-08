@@ -52,26 +52,43 @@ scale=1.0">
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-12 my-2 card shadow-sm p-2 mb-3 bg-body rounded">
-                <div class="card-body">
-                    <h5 class="h5">Alamat</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur p>
+          <div class="col-lg-5">
+            <div class="info-wrap">
+              <div class="info-item d-flex">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Alamat</h3>
+                  <p>Jl. Matraman Dalam III, Kel. Pegangsaan, Kec. Menteng, Jakarta Pusat.</p>
                 </div>
-            </div>
-            <div class="col-md-12 my-2 card shadow-sm p-2 mb-3 bg-body rounded">
-                <div class="card-body">
-                    <h5 class="h5">Email</h5>
-                    <p>Lorem ipsum dolor sit amet</p>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <p>+62 813 8123 2139</p>
                 </div>
-            </div>
-            <div class="col-md-12 my-2 card shadow-sm p-2 mb-3 bg-body rounded">
-                <div class="card-body">
-                    <h5 class="h5">No.HP</h5>
-                    <p>Lorem ipsum dolor sit </p>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email</h3>
+                  <p>akhallavi12@gmail.com</p>
                 </div>
+              </div><!-- End Info Item -->
             </div>
+          </div>
+
+          <div class="col-lg-7">
+            
+            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBz8ynSiItupmdzgMphM1XM4q-bBJPJBGk&q=Sekretariat%20Rayon%20PMII%20Teknik%20Unusia,Jakarta" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+          </div><!-- End Contact Form -->
+
         </div>
-    </div>
+
+      </div>
     <div class="container py-4">
         <footer class="pt-3 mt-4 text-muted border-top">
             <div class="container">

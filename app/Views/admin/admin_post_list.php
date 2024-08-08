@@ -7,6 +7,7 @@
     <title>MyBlog</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>" />
 </head>
 
 <body>
@@ -31,7 +32,7 @@
             </div>
         </div>
     </nav>
-    <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="p-5 mb-4 bg-light rounded-3 welcome-section">
         <div class="container py-5">
             <h1 class="display-5 fw-bold">Blog > Admin</h1>
         </div>
